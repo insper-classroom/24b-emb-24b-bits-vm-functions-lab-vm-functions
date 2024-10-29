@@ -35,7 +35,7 @@ def init_ram():
 
 
 
-@pytest.mark.telemetry_files(source("mult/mult.vm"))
+@pytest.mark.telemetry_files(source("1-mult/mult.vm"))
 def test_mult_0():
     ram = init_ram()
     a = 0
@@ -43,7 +43,7 @@ def test_mult_0():
     ram[TEMP[0]] = a
     ram[TEMP[1]] = b
     tst = {SP: STACK, TEMP[2]: a*b}
-    assert vm_test("mult", ram, tst, 50000)
+    assert vm_test("1-mult", ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("1-mult/mult.vm"))
@@ -118,14 +118,13 @@ def test_pow_tres():
     assert vm_test("3-pow", ram, tst, 100000)
 
 
-
 @pytest.mark.telemetry_files(source("4-isqrt/isqrt.vm"))
 def test_isqrt_quatro():
     ram = init_ram()
     ram[TEMP[0]] = 4
     ram[TEMP[1]] = 0
     tst = {TEMP[1]: math.sqrt(ram[TEMP[0]])}
-    assert vm_test(os.path.join("4-isqrt"), ram, tst, 50000)
+    assert vm_test("4-isqrt", ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("4-isqrt/isqrt.vm"))
@@ -134,4 +133,4 @@ def test_isqrt_nove():
     ram[TEMP[0]] = 9
     ram[TEMP[1]] = 0
     tst = {TEMP[1]: math.sqrt(ram[TEMP[0]])}
-    assert vm_test(os.path.join("4-isqrt"), ram, tst, 50000)
+    assert vm_test("4-isqrt", ram, tst, 50000)

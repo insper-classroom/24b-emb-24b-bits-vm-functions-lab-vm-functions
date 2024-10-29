@@ -1,0 +1,11 @@
+function Main.main 0
+
+push temp 0
+call isqrt 1
+pop temp 1
+
+
+
+// DEIXAR NO FINAL DO CÓDIGO, NAO TIRAR!
+label loop
+goto loop

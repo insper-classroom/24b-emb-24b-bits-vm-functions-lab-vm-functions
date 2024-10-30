@@ -71,19 +71,22 @@ def test_mult_2():
 @pytest.mark.telemetry_files(source("2-div/div.vm"))
 def test_div_0():
     ram = init_ram()
-
+    ram[TEMP[0]] = 0
+    ram[TEMP[1]] = 5
     val = 0 // 5
-    tst = {SP: STACK, TEMP[1]: val}
+    tst = {SP: STACK, TEMP[2]: val}
     assert vm_test("2-div", ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("2-div/div.vm"))
 def test_div_15_5():
     ram = init_ram()
-
-    val = 15 // 5
-    tst = {SP: STACK, TEMP[1]: val}
+    ram[TEMP[0]] = 6
+    ram[TEMP[1]] = 3
+    val = 6 // 3
+    tst = {SP: STACK, TEMP[2]: val}
     assert vm_test("2-div", ram, tst, 50000)
+
 
 
 @pytest.mark.telemetry_files(source("3-pow/pow.vm"))

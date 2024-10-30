@@ -24,7 +24,7 @@ function Main.main 0
 push temp 0
 push temp 1
 call div 2
-pop temp 1
+pop temp 2
 
 label while
     goto while

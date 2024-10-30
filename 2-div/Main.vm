@@ -21,8 +21,8 @@ function Main.main 0
 
 // nao precisa mexer aqui, esse
 // exercicio tem que implementar o div.vm
-push constant 15
-push constant 5
+push temp 0
+push temp 1
 call div 2
 pop temp 1
 
